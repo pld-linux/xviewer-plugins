@@ -2,12 +2,13 @@ Summary:	A collection of plugins for Xviewer
 Summary(pl.UTF-8):	Zestaw wtyczek do przeglądarki obrazków Xviewer
 Name:		xviewer-plugins
 Version:	3.4.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: https://github.com/linuxmint/xviewer-plugins/tags
 Source0:	https://github.com/linuxmint/xviewer-plugins/archive/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	02dfa3413f5511f6cadc7b9aa373a597
+Patch0:		%{name}-libdir.patch
 URL:		https://github.com/linuxmint/xviewer-plugins
 BuildRequires:	clutter-devel >= 1.9.4
 BuildRequires:	clutter-gtk-devel >= 1.1.2
@@ -47,6 +48,7 @@ Ten pakiet dostarcza zestaw wtyczek do przeglądarki obrazków Xviewer.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
 %meson
